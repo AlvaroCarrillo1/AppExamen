@@ -1,0 +1,97 @@
+body{
+
+}
+
+.container-fluid{
+
+	background: #2c3e50;
+	color: #FFF;
+	position: absolute z-index;
+
+}
+.jumbotron{
+	background: #fff;
+}
+.social{
+	
+	list-style: none;
+	text-align: left;
+
+}
+.social i{
+	color: #FFF;
+}
+
+.social a{
+	color: #FFF;
+	text-decoration: none;
+}
+
+.social a:hover{
+	
+	color: #18bc9c;
+}
+.social i:hover{
+	
+	color: #18bc9c;
+}
+
+
+.col-md-4{
+	text-align: justify;
+	display: inline-block;
+}
+
+.avatar{
+	border: 2.5px solid #FFF;
+	border-radius: 100px;
+	float: left;
+	height: 200px;
+	width: 200px;
+}
+
+
+/*--Seccion del Catalogo--*/
+#products {
+position: relative;
+max-width: 100%;
+width: 100%;
+}
+
+.white-panel {
+position: absolute;
+background: white;
+box-shadow: 0px 1px 2px rgba(0,0,0,0.3);
+padding: 10px;
+}
+.white-panel h1 {
+font-size: 1em;
+}
+.white-panel h1 a {
+color: #A92733;
+}
+.white-panel:hover {
+box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+margin-top: -5px;
+-webkit-transition: all 0.3s ease-in-out;
+-moz-transition: all 0.3s ease-in-out;
+-o-transition: all 0.3s ease-in-out;
+transition: all 0.3s ease-in-out;
+}
+
+.navbar{
+	margin-bottom: 0;
+}
+/* Carrito -----------*/
+.table-cart
+{
+	background: #fff;
+	border-radius: 1em;
+	margin-bottom: 30px;
+	padding: 1em;
+}
+
+.table-cart img
+{
+	width: 50px;
+}
