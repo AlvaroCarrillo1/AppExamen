@@ -56,9 +56,10 @@ class AutoridadesController extends Controller
 
     public function edit(Autoridades $autoridades)
     {
-         $autoridades = Autoridades::All();
-       
-        return redirect()->route('admin.autoridades.edit', compact('autoridades'));
+          $dependencias = Dependencias::orderBy('id', 'desc')->pluck('name', 'id');
+        $autoridades = Autoridades::orderBy('id', 'desc')->pluck('name', 'id');
+        return view('admin.autoridades.edit', compact('dependencias', 'autoridades'));
+         
     }
 
     

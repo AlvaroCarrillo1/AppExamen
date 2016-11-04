@@ -30,7 +30,7 @@
                         </div>
 
                             <div class="form-group">
-                            <label for="extract">Nombre:</label>
+                            <label for="nombre">Nombre:</label>
 
                             {!!
                                 Form::text(
@@ -45,7 +45,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="description">App Paterno:</label>
+                            <label for="appaterno">App Paterno:</label>
 
                             {!!
                                 Form::text(
@@ -60,7 +60,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="price">App Materno:</label>
+                            <label for="apmaterno">App Materno:</label>
 
                             {!!
 
@@ -76,7 +76,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="image">Fecha Nac: </label>
+                            <label for="fecha">Fecha Nac: </label>
                               {!!
 
                                Form::text(
@@ -92,7 +92,7 @@
                         </div>
 
                           <div class="form-group">
-                            <label for="image">Email: </label>
+                            <label for="email">Email: </label>
                               {!!
 
                                Form::text(

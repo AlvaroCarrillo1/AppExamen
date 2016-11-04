@@ -24,8 +24,9 @@
                         <input type="hidden" name="_method" value="PUT">
                        
                          <div class="form-group">
-                            <label class="control-label" for="category_id">Autoridades</label>
+                            <label class="control-label" for="dependencia_id">Autoridades</label>
                             {!! Form::select('dependencia_id', $autoridades, null, ['class' => 'form-control']) !!}
+
                         </div>
 
                         <div class="form-group">
@@ -45,15 +46,58 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="extract">Extracto:</label>
+                            <label for="extract">Ap Paterno:</label>
 
                             {!!
                                 Form::text(
-                                    'uiid',
+                                    'primer_apellido',
                                     null,
                                     array(
                                         'class'=>'form-control',
-                                        'placeholder' => 'Ingresa el uiid...',
+                                        'placeholder' => '...',
+                                    )
+                                )
+                            !!}
+                        </div>
+                        <div class="form-group">
+                            <label for="extract">Ap Materno:</label>
+
+                            {!!
+                                Form::text(
+                                    'segundo_apellido',
+                                    null,
+                                    array(
+                                        'class'=>'form-control',
+                                        'placeholder' => '....',
+                                    )
+                                )
+                            !!}
+                        </div>
+                        <div class="form-group">
+                            <label for="extract">Fecha Nac:</label>
+
+                            {!!
+                                Form::text(
+                                    'fecha_nacimiento',
+                                    null,
+                                    array(
+                                        'class'=>'form-control',
+                                        'placeholder' => '....',
+                                    )
+                                )
+                            !!}
+                        </div>
+
+                        <div class="form-group">
+                            <label for="extract">Email:</label>
+
+                            {!!
+                                Form::text(
+                                    'email',
+                                    null,
+                                    array(
+                                        'class'=>'form-control',
+                                        'placeholder' => '....',
                                     )
                                 )
                             !!}
