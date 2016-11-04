@@ -6,7 +6,7 @@
 		<div class="page-header">
 			<h1>
 				<i class="fa fa-info"></i>
-				Add <small>[Dependencia]</small>
+				Dependencia <small>[Editar Dependencia]</small>
 			</h1>
 		</div>
 
@@ -42,7 +42,7 @@
                             <label for="description">UUID:</label>
                             
                             {!! 
-                                Form::text(
+                                Form::textarea(
                                     'uuid', 
                                     null, 
                                     array(

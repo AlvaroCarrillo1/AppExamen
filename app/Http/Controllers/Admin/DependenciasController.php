@@ -40,6 +40,12 @@ class DependenciasController extends Controller
     {
         //return $request->all();
         
+            $this->validate($request, [
+          'name' => 'required',
+            'uuid' => 'required',
+
+        ]);
+
         $data = [
         
             'name' =>$request->get('name'),
@@ -66,12 +72,10 @@ class DependenciasController extends Controller
     }
 
 
- public function destroy(Dependencias $dependencias)
+ public function destroy(Request $request, Dependencias $dependencias)
     {
         $deleted = $dependencias->delete();
-        $dependencias = Dependencias::all();
-        //dd($provider);
-       $dependencias = Dependencias::name($request->get('name'))->orderBy('id', 'desc')->paginate(5);
+        $dependencias = Dependencias::name($request->get('name'))->orderBy('id', 'desc')->paginate(5);
         return view('admin.dependencias.index', compact('dependencias'));
     }
 
