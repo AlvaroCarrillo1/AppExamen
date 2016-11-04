@@ -22,11 +22,12 @@
                 <table class="table table-striped table-bordered table-hover">
                     <thead>
                     <tr>
-                        <th>Cargo</th>
+                        
                         <th>Nombre</th>
                         <th>App Paterno</th>
                         <th>App Materno</th>
                         <th>Fecha de nacimiento</th>
+                        <th>Email</th>
                         <th>Modificar</th>
                         <th>Eliminar</th>
                     </tr>
@@ -36,12 +37,12 @@
                     <tr>
 
                             
-                            <td>{{$autoridad->cargo}}</td>
-                            <td>{{$autoridad->nombre}}</td>
+                           
+                            <td>{{$autoridad->name}}</td>
                             <td>{{$autoridad->primer_apellido}}</td>
                             <td>{{$autoridad->segundo_apellido}}</td>
                             <td>{{$autoridad->fecha_nacimiento}}</td>
-                            
+                            <td>{{$autoridad->email}}</td>
 
                             
 

@@ -19,7 +19,7 @@
                         @include('admin.partials.errors')
                     @endif
 
-                        {!! Form::open(['route' => 'admin.autoridades.store', 'enctype' => 'multipart/form-data','files' => true, 'method'=> 'POST' ]) !!}
+                        {!! Form::open(['route' => 'admin.autoridades.store', 'method'=> 'POST' ]) !!}
 
                       
 
@@ -29,28 +29,12 @@
                             {!! Form::select('dependencias_id', $dependencias, null, ['class' => 'form-control']) !!}
                         </div>
 
-                        <div class="form-group">
-                            <label for="name">Cargo:</label>
-
-                            {!!
-                                Form::text(
-                                    'cargo',
-                                    null,
-                                    array(
-                                        'class'=>'form-control',
-                                        'placeholder' => 'Ingresa el cargo...',
-                                        'autofocus' => 'autofocus'
-                                    )
-                                )
-                            !!}
-                        </div>
-
-                        <div class="form-group">
+                            <div class="form-group">
                             <label for="extract">Nombre:</label>
 
                             {!!
                                 Form::text(
-                                    'nombre',
+                                    'name',
                                     null,
                                     array(
                                         'class'=>'form-control',
@@ -107,22 +91,24 @@
                            !!}
                         </div>
 
-                        <div class="form-group">
-                            <label for="image">UIID: </label>
+                          <div class="form-group">
+                            <label for="image">Email: </label>
                               {!!
 
                                Form::text(
-                                   'uiid',
+                                   'email',
                                    null,
                                    array(
                                        'class'=>'form-control',
-                                       'placeholder' => 'Ingresa el UIDD',
+                                       'placeholder' => 'Ingresa tu email',
+                                       'required',
 
                                    )
                                )
                            !!}
                         </div>
-                        
+
+                                               
 
                         <div class="form-group">
                             {!! Form::submit('Guardar', array('class'=>'btn btn-primary')) !!}

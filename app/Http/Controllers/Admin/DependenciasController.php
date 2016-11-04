@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Dependencias;
 class DependenciasController extends Controller
 {
     //
@@ -15,8 +15,7 @@ class DependenciasController extends Controller
      */
     public function index(Request $request)
     {
-        $dependencias = Dependencias::first($request->get('nombre'))->orderBy('id', 'desc')->paginate(5);
-       
+        $dependencias = Dependencias::name($request->get('name'))->orderBy('id', 'desc')->paginate(5);
         return view('admin.dependencias.index', compact('dependencias'));
 
     }

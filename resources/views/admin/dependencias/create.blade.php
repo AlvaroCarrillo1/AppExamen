@@ -27,7 +27,7 @@
                             
                             {!! 
                                 Form::text(
-                                    'nombre', 
+                                    'name', 
                                     null, 
                                     array(
                                         'class'=>'form-control',

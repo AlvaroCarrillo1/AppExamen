@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Autoridades;
+use App\Dependencias;
 
 class AutoridadesController extends Controller
 {
@@ -12,7 +14,8 @@ class AutoridadesController extends Controller
      public function index(Request $request)
     {
      
-        $autoridades = Autoridades::first($request->get('nombre'))->orderBy('id', 'desc')->paginate(5);
+        $autoridades = Autoridades::name($request->get('name'))->orderBy('id', 'desc')->paginate(5);
+
         return view('admin.autoridades.index', compact('autoridades'));
 
         
@@ -31,10 +34,11 @@ class AutoridadesController extends Controller
 
         $data = [
             'cargo'          =>str_slug($request->get('cargo')),
-            'nombre'          =>$request->get('nombre'),
+            'name'          =>$request->get('name'),
             'primer_apellido'   => $request->get('primer_apellido'),
             'segundo_apellido'       => $request->get('segundo_apellido'),
             'fecha_nacimiento'         => $request->get('fecha_nacimiento'),
+              'email'         => $request->get('email'),
             'uuid'         => $request->get('uuid'),
            'dependencia_id'   => $request->get('dependencia_id')
             
@@ -62,7 +66,7 @@ class AutoridadesController extends Controller
    public function update(Request $request, Autoridades $autoridades)
     {
         $autoridades->fill($request->all());
-        $autoridades->nombre = str_slug($request->get('cargo'));
+        $autoridades->nombre = str_slug($request->get('name'));
                 $updated = $autoridades->save();
         return redirect()->route('admin.autoridades.index');
 

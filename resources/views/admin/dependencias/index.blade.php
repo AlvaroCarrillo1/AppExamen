@@ -7,7 +7,13 @@
 			<h1>
 				<i class="fa fa-info"></i>
 				Dependencias <a href="{{ url('admin/dependencias/create') }}" class="btn btn-warning"><i class="fa fa-plus-circle"></i>Add  </a>
-                
+                <form href="{{route('admin.dependencias.index')}}" class="navbar-form navbar-left pull-right" role="search"  method="GET">
+                    <div class="form-group">
+                        <input class="form-control" name="name" type="text" placeholder="Pon el nombre" required="">
+                    </div>
+                    <button type="submit" class="btn btn-default">Buscar</button>
+                </form>
+
 			</h1>
 		</div>
 		<div class="page">
@@ -25,7 +31,7 @@
 					<tbody>
 						@foreach($dependencias as $dependencia)
 							<tr>
-								<td>{{ $dependencia->nombre }}</td>
+								<td>{{ $dependencia->name }}</td>
 								<td>{{ $dependencia->uuid }}</td>
 								<td><a href="#" class="btn btn-primary">
 										<i class="fa fa-pencil-square"></i>
