@@ -6,7 +6,7 @@
 		<div class="page-header">
 			<h1>
 				<i class="fa fa-shopping-cart"></i>
-				CATEGORÍAS <small>[Editar categoría]</small>
+				Dependencias <small>[Editar]</small>
 			</h1>
 		</div>
 
@@ -19,7 +19,7 @@
                         @include('admin.partials.errors')
                     @endif
                     
-                    {!! Form::model($dependencias, array('route' => array('admin.dependencias.update', $id))) !!}
+                    {!! Form::model($dependencias, array('route' => array('admin.dependencias.update', $dependencias))) !!}
 
                         <input type="hidden" name="_method" value="PUT">
         
@@ -40,11 +40,11 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="description">Descripción:</label>
+                            <label for="description">UUID:</label>
                             
                             {!! 
                                 Form::textarea(
-                                    'description', 
+                                    'uuid', 
                                     null, 
                                     array(
                                         'class'=>'form-control'

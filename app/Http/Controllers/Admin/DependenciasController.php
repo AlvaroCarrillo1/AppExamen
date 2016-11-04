@@ -42,7 +42,7 @@ class DependenciasController extends Controller
         
         $data = [
         
-            'nombre' =>$request->get('nombre'),
+            'name' =>$request->get('name'),
             'uuid'  => $request->get('uuid')
             
         ];
@@ -51,11 +51,27 @@ class DependenciasController extends Controller
         return redirect()->route('admin.dependencias.index');
     }
 
+   public function edit(Dependencias $dependencias)
+    {
+        return view('admin.dependencias.edit', compact('dependencias'));
+    }
+
+ public function update(Request $request, Dependencias $dependencias)
+    {
+        $dependencias->fill($request->all());
+        $updated = $dependencias->save();
+      
+        $dependencias = Dependencias::name($request->get('name'))->orderBy('id', 'desc')->paginate(5);
+        return view('admin.dependencias.index', compact('dependencias'));
+    }
+
+
  public function destroy(Dependencias $dependencias)
     {
         $deleted = $dependencias->delete();
         $dependencias = Dependencias::all();
         //dd($provider);
+       $dependencias = Dependencias::name($request->get('name'))->orderBy('id', 'desc')->paginate(5);
         return view('admin.dependencias.index', compact('dependencias'));
     }
 

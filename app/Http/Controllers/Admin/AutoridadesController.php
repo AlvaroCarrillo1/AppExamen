@@ -24,7 +24,7 @@ class AutoridadesController extends Controller
     public function create()
     {
         
-        $dependencias = Dependencias::orderBy('id', 'cargo')->pluck('nombre', 'id');
+        $dependencias = Dependencias::orderBy('id', 'cargo')->pluck('name', 'id');
         return view('admin.autoridades.create', compact('autoridades', 'dependencias'));
     }
 
@@ -56,9 +56,9 @@ class AutoridadesController extends Controller
 
     public function edit(Autoridades $autoridades)
     {
-         $autoridades = Autoridades::orderBy('id', 'desc')->pluck('nombre', 'id');
-        $dependencias = Dependencias::orderBy('id', 'desc')->pluck('nombre', 'id');
-        return redirect()->route('admin.autoridades.edit', compact('autoridades', 'dependencias'));
+         $autoridades = Autoridades::All();
+       
+        return redirect()->route('admin.autoridades.edit', compact('autoridades'));
     }
 
     
@@ -66,7 +66,7 @@ class AutoridadesController extends Controller
    public function update(Request $request, Autoridades $autoridades)
     {
         $autoridades->fill($request->all());
-        $autoridades->nombre = str_slug($request->get('name'));
+        $autoridades->name = str_slug($request->get('name'));
                 $updated = $autoridades->save();
         return redirect()->route('admin.autoridades.index');
 

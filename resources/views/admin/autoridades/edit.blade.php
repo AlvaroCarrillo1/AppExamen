@@ -18,12 +18,13 @@
                     @if (count($errors) > 0)
                         @include('admin.partials.errors')
                     @endif
-                    {!! Form::model($autoridades, array('route' => array('admin.autoridades.update', $autoridad->id)) !!}
+                    {!! Form::model($autoridades, array('route' => array('admin.autoridades.update', $autoridades)) !!}
+              
 
                         <input type="hidden" name="_method" value="PUT">
                        
                          <div class="form-group">
-                            <label class="control-label" for="category_id">Categoria</label>
+                            <label class="control-label" for="category_id">Autoridades</label>
                             {!! Form::select('dependencia_id', $autoridades, null, ['class' => 'form-control']) !!}
                         </div>
 
@@ -48,29 +49,17 @@
 
                             {!!
                                 Form::text(
-                                    'extract',
+                                    'uiid',
                                     null,
                                     array(
                                         'class'=>'form-control',
-                                        'placeholder' => 'Ingresa el extracto...',
+                                        'placeholder' => 'Ingresa el uiid...',
                                     )
                                 )
                             !!}
                         </div>
 
-                        <div class="form-group">
-                            <label for="description">Descripción:</label>
-
-                            {!!
-                                Form::textarea(
-                                    'description',
-                                    null,
-                                    array(
-                                        'class'=>'form-control'
-                                    )
-                                )
-                            !!}
-                        </div>
+                        
 
                       
 

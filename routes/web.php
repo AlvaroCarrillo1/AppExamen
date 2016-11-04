@@ -103,7 +103,7 @@ Route::get('dependencias/index', [
 ]);
 
 
-Route::get('dependencias/edit/{id}', [
+Route::get('dependencias/edit/{dependencias}', [
     'uses' => 'Admin\DependenciasController@edit',
     'as' => 'admin.dependencias.edit'
 ]);
@@ -113,7 +113,7 @@ Route::post('dependencias/store', [
     'as' => 'admin.dependencias.store'
 ]);
 
-Route::put('dependencias/update/{id}', [
+Route::put('dependencias/update/{dependencias}', [
     'uses' => 'Admin\DependenciasController@update',
     'as' => 'admin.dependencias.update'
 ]);

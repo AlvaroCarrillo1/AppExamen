@@ -33,7 +33,7 @@
 							<tr>
 								<td>{{ $dependencia->name }}</td>
 								<td>{{ $dependencia->uuid }}</td>
-								<td><a href="#" class="btn btn-primary">
+								<td><a href="{{ route('admin.dependencias.edit', $dependencia->id) }}" class="btn btn-primary">
 										<i class="fa fa-pencil-square"></i>
 									</a></td>
 								<td>
